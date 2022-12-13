@@ -1,13 +1,14 @@
-//user- gauravemi
-//pass-  masaiemi
+
 const express= require("express")
 const app= express()
 const mongoose = require("mongoose");
 const router = require("./routes/register.route");
 const cors= require("cors");
+require("dotenv").config()
 const router2 = require("./routes/login.route");
 app.use(cors())
 app.use(express.json())
+const PORT= process.env.PORT || 8080
 
 app.use("/register",router)
 app.use("/login",router2)
@@ -27,6 +28,6 @@ mongoose
   .catch((err) => console.log(err));
 
 
-app.listen(8080, ()=>{
+app.listen(PORT, ()=>{
     console.log("server started at port 8080")
 })
