@@ -27,6 +27,9 @@ mongoose
   })
   .catch((err) => console.log(err));
 
+  app.get("/",()=>{
+    res.send("Masai")
+  })
 
 app.listen(PORT, ()=>{
     console.log("server started at port 8080")
