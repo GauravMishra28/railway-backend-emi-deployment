@@ -27,7 +27,7 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-  app.get("/",()=>{
+app.get("/",(req,res)=>{
     res.send("Masai")
   })
 
