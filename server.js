@@ -20,7 +20,10 @@ app.get("/",(req,res)=>{
 mongoose.set("strictQuery", false);
 const MONGOURL = process.env.MONGO_URL;
 
-app.listen(PORT, async () => {
-  await mongoose.connect(MONGOURL);
-  console.log(`server started on port ${PORT}`);
+app.listen(PORT,  () => {
+mongoose.connect(MONGOURL).then(()=>{
+   console.log("connected to db")
+   console.log(`server started on port ${PORT}`);
+  });
+
 });
